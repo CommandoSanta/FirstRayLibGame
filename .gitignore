@@ -406,3 +406,16 @@ Makefile
 *.swo
 *.swn
 /build/compile_commands.json
+
+#additional by Me (jake)
+build/ 
+.vs/
+Debug/
+Release/
+*.exe
+*.pdb
+*.ilk
+*.exp
+*.lib
+Thumbs.db
+.DS_Store
