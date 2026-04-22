@@ -418,4 +418,5 @@ Release/
 *.exp
 *.lib
 Thumbs.db
-.DS_Store
+.DS_Store 
+.vscode/
