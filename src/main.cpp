@@ -13,6 +13,10 @@ int main ()
 	const int screenHeight = 600; 
 	InitWindow(screenWidth, screenHeight, "Game Testing");
 
+	//player values
+	Vector2 playerPos = { (float)screenWidth / 2, (float)screenHeight / 2 };
+	const float playerSpeed = 2.0f;
+
 	const int targetFPS = 60;
 	SetTargetFPS(targetFPS);
 
@@ -28,6 +32,13 @@ int main ()
 		BeginDrawing();
 		ClearBackground(WHITE);
 
+		//input handle (WASD)
+		if (IsKeyDown(KEY_D)) playerPos.x += playerSpeed;
+		if (IsKeyDown(KEY_A)) playerPos.x -= playerSpeed;
+		if (IsKeyDown(KEY_W)) playerPos.y -= playerSpeed;
+		if (IsKeyDown(KEY_S)) playerPos.y += playerSpeed;
+
+
 		// draw some text using the default font
 		const int textX = 0;
 		const int textY = 0;
@@ -35,7 +46,7 @@ int main ()
 		const Color textColor = BLACK;
 		DrawText("Hello", textX, textY, textSize, textColor);
 
-		DrawTexture(wabbit, 400, 200, WHITE);
+		DrawTextureV(wabbit, playerPos, WHITE);
 		
 		EndDrawing();
 	}
